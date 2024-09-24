@@ -46,11 +46,15 @@ function deleteTodo(i) {
   todoList.splice(i, 1);
   renderTodoList();
 
-  localStorage.setItem("todoList", JSON.stringify(todoList));
+  if (todoList.length == 0) {
+    localStorage.removeItem("todoList");
+  } else {
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }
 }
 
 function clearTodo() {
-  localStorage.removeItem("todoList");
   todoList = [];
   renderTodoList();
+  localStorage.removeItem("todoList");
 }
