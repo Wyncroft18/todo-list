@@ -9,9 +9,9 @@ function renderTodoList() {
     const todoObject = todoList[i];
     const { name, time, dueDate } = todoObject;
     const html = `
-      <div>${name}</div>
-      <div>${time}</div>
-      <div>${dueDate}</div> 
+      <div class="task-name">${name}</div>
+      <div class="task-time">${time}</div>
+      <div class="task-due-date">${dueDate}</div> 
       <button onclick="
         deleteTodo(${i});
       " class="delete-button">Delete</button>

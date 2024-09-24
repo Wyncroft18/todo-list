@@ -7,20 +7,22 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <p>Todo List</p>
+    <div class="main-content">
+      <p>To-Do List</p>
 
-    <div class="input-grid">
-      <input placeholder="Todo name" class="js-name-input name-input" />
-      <input type="time" class="js-time-input time-input" />
-      <input type="date" class="js-due-date-input due-date-input" />
-      <button onclick="addTodo()" class="add-button">Add</button>
+      <div class="input-grid">
+        <input placeholder="Task name" class="js-name-input name-input" />
+        <input type="time" class="js-time-input time-input" />
+        <input type="date" class="js-due-date-input due-date-input" />
+        <button onclick="addTodo()" class="add-button">Add</button>
+      </div>
+
+      <div class="js-container todo-grid"></div>
+
+      <button onclick="clearTodo()" class="js-clear-button clear-button">
+        Clear Todo List
+      </button>
     </div>
-
-    <div class="js-container todo-grid"></div>
-
-    <button onclick="clearTodo()" class="js-clear-button clear-button">
-      Clear Todo List
-    </button>
 
     <script src="./index.js"></script>
   </body>
