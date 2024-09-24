@@ -1,6 +1,6 @@
 body {
   font-family: Arial;
-  background-color: #22d3ee;
+  background-color: #1e293b;
   display: flex;
   justify-content: center;
 }
@@ -10,6 +10,7 @@ body {
 }
 
 p {
+  color: white;
   font-size: 30px;
   text-align: center;
 }
