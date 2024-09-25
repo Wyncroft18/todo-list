@@ -6,12 +6,9 @@ function renderTodoList() {
   let todoListHtml = "";
 
   for (let i = 0; i < todoList.length; i++) {
-    const todoObject = todoList[i];
-    const { name, time, dueDate } = todoObject;
+    const todo = todoList[i];
     const html = `
-      <div class="task-name">${name}</div>
-      <div class="task-time">${time}</div>
-      <div class="task-due-date">${dueDate}</div> 
+      <div class="task-name">${todo}</div>
       <button onclick="
         deleteTodo(${i});
       " class="delete-button">Delete</button>
@@ -26,17 +23,9 @@ function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
   const name = inputElement.value;
 
-  const timeInputElement = document.querySelector(".js-time-input");
-  const time = timeInputElement.value;
-
-  const dateInputElement = document.querySelector(".js-due-date-input");
-  const dueDate = dateInputElement.value;
-
-  todoList.push({ name, time, dueDate });
+  todoList.push(name);
 
   inputElement.value = "";
-  timeInputElement.value = "";
-  dateInputElement.value = "";
   renderTodoList();
 
   localStorage.setItem("todoList", JSON.stringify(todoList));

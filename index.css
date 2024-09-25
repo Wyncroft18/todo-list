@@ -1,12 +1,38 @@
 body {
+  background-color: aliceblue;
   font-family: Arial;
-  background-color: #1e293b;
+  margin: 0;
   display: flex;
   justify-content: center;
 }
 
-.main-content {
-  width: 580px;
+@media (max-width: 600px) {
+  .main-content {
+    background-color: #1e293b;
+    padding: 10px;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 991px) {
+  .main-content {
+    width: 70vw;
+    background-color: #1e293b;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-content {
+    background-color: #1e293b;
+    width: 700px;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 16px;
+  }
 }
 
 p {
@@ -18,7 +44,7 @@ p {
 .input-grid,
 .todo-grid {
   display: grid;
-  grid-template-columns: 200px 100px 150px 100px;
+  grid-template-columns: 3fr 1fr;
   gap: 10px;
   margin-bottom: 10px;
 }
@@ -27,9 +53,7 @@ p {
   align-items: stretch;
 }
 
-.name-input,
-.time-input,
-.due-date-input {
+.name-input {
   font-size: 15px;
   padding: 6px;
 }
@@ -65,9 +89,7 @@ p {
   background-color: darkred;
 }
 
-.task-name,
-.task-time,
-.task-due-date {
+.task-name {
   background-color: white;
   height: 37.75px;
   display: flex;
