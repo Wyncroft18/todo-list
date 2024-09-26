@@ -23,12 +23,16 @@ function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
   const name = inputElement.value;
 
-  todoList.push(name);
+  if (name.length !== 0) {
+    todoList.push(name);
 
-  inputElement.value = "";
-  renderTodoList();
+    inputElement.value = "";
+    renderTodoList();
 
-  localStorage.setItem("todoList", JSON.stringify(todoList));
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  } else {
+    alert("Task name can't be empty!");
+  }
 }
 
 function deleteTodo(i) {

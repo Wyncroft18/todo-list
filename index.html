@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
+    <title>Task Flow</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <div class="main-content">
-      <p>To-Do List</p>
+      <p class="title">Task Flow</p>
 
       <div class="input-grid">
-        <input placeholder="Task name" class="js-name-input name-input" />
+        <input
+          placeholder="Task name"
+          class="js-name-input name-input"
+          maxlength="30"
+        />
         <button onclick="addTodo()" class="add-button">Add</button>
       </div>
 

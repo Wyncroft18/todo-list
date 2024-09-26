@@ -1,44 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap");
+
 body {
-  background-color: aliceblue;
+  height: 100vh;
+  background-image: linear-gradient(130deg, #1e293b, rgb(131, 0, 131));
   font-family: Arial;
   margin: 0;
   display: flex;
+  align-items: start;
   justify-content: center;
 }
 
 @media (max-width: 600px) {
   .main-content {
-    background-color: #1e293b;
+    background-image: linear-gradient(130deg, #1e293b, rgb(131, 0, 131));
     padding: 10px;
     width: 100vw;
     height: 100vh;
+  }
+
+  .title {
+    color: white;
+  }
+
+  .clear-button {
+    background-color: black;
   }
 }
 
 @media (min-width: 601px) and (max-width: 991px) {
   .main-content {
-    width: 70vw;
-    background-color: #1e293b;
-    padding: 10px;
-    margin-top: 20px;
+    background-color: aliceblue;
+    width: 400px;
+    margin-top: 50px;
+    padding: 20px 30px;
     border-radius: 16px;
+  }
+
+  .title {
+    color: black;
+  }
+
+  .clear-button {
+    background-color: black;
   }
 }
 
 @media (min-width: 992px) {
   .main-content {
-    background-color: #1e293b;
-    width: 700px;
-    padding: 10px;
-    margin-top: 20px;
+    background-color: aliceblue;
+    width: 400px;
+    margin-top: 50px;
+    padding: 20px 30px;
     border-radius: 16px;
+  }
+
+  .title {
+    color: black;
+  }
+
+  .clear-button {
+    background-color: black;
   }
 }
 
-p {
-  color: white;
+.title {
+  font-family: "Sofadi One";
   font-size: 30px;
-  text-align: center;
 }
 
 .input-grid,
@@ -84,12 +111,8 @@ p {
   opacity: 0.5;
 }
 
-.delete-button {
-  height: 37.75px;
-  background-color: darkred;
-}
-
 .task-name {
+  border: 1px solid black;
   background-color: white;
   height: 37.75px;
   display: flex;
@@ -97,9 +120,13 @@ p {
   justify-content: center;
 }
 
+.delete-button {
+  height: 37.75px;
+  background-color: darkred;
+}
+
 .clear-button {
   height: 37.75px;
   width: 130px;
-  background-color: black;
   border-radius: 4px;
 }
