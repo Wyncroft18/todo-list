@@ -9,15 +9,25 @@ function renderTodoList() {
     const todo = todoList[i];
     const html = `
       <div class="task-name">${todo}</div>
-      <button onclick="
-        deleteTodo(${i});
-      " class="delete-button">Delete</button>
+      <button class="delete-button js-delete-button">Delete</button>
     `;
     todoListHtml += html;
   }
 
   document.querySelector(".js-container").innerHTML = todoListHtml;
+
+  document
+    .querySelectorAll(".js-delete-button")
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener("click", () => {
+        deleteTodo(index);
+      });
+    });
 }
+
+document.querySelector(".js-add-button").addEventListener("click", () => {
+  addTodo();
+});
 
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
@@ -45,6 +55,10 @@ function deleteTodo(i) {
     localStorage.setItem("todoList", JSON.stringify(todoList));
   }
 }
+
+document.querySelector(".js-clear-button").addEventListener("click", () => {
+  clearTodo();
+});
 
 function clearTodo() {
   todoList = [];
