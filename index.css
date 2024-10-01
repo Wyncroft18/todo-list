@@ -25,6 +25,10 @@ body {
   .clear-button {
     background-color: black;
   }
+
+  .task-header {
+    color: white;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 991px) {
@@ -78,6 +82,28 @@ body {
 
 .input-grid {
   align-items: stretch;
+}
+
+.task-header {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+hr {
+  display: inline-block;
+  height: 3px;
+  width: 35%;
+  background-color: gray;
+  border: none;
+}
+
+.left-hr {
+  margin-left: 0;
+}
+
+.right-hr {
+  margin-right: 0;
 }
 
 .name-input {
