@@ -7,27 +7,21 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div class="main-content">
-      <p class="title">Task Flow</p>
+    <div class="container">
+      <div class="todo-app">
+        <h2 class="app-name">Task Flow</h2>
 
-      <div class="input-grid">
-        <input
-          placeholder="Task name"
-          class="js-name-input name-input"
-          maxlength="40"
-        />
-        <button class="add-button js-add-button">Add</button>
+        <div class="input-section">
+          <input
+            type="text"
+            placeholder="Write some tasks"
+            class="input-field"
+          />
+          <button class="add-button">Add</button>
+        </div>
+
+        <ul class="list-container"></ul>
       </div>
-
-      <div class="task-header">
-        <hr class="left-hr" />
-        Tasks
-        <hr class="right-hr" />
-      </div>
-
-      <div class="js-container todo-grid"></div>
-
-      <button class="js-clear-button clear-button">Clear Todo List</button>
     </div>
 
     <script src="./index.js"></script>

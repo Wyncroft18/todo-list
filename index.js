@@ -1,67 +1,46 @@
-let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+const inputField = document.querySelector(".input-field");
+const listContainer = document.querySelector(".list-container");
+const addButton = document.querySelector(".add-button");
 
-renderTodoList();
-
-function renderTodoList() {
-  let todoListHtml = "";
-
-  for (let i = 0; i < todoList.length; i++) {
-    const todo = todoList[i];
-    const html = `
-      <div class="task-name">${todo}</div>
-      <button class="delete-button js-delete-button">Delete</button>
-    `;
-    todoListHtml += html;
-  }
-
-  document.querySelector(".js-container").innerHTML = todoListHtml;
-
-  document
-    .querySelectorAll(".js-delete-button")
-    .forEach((deleteButton, index) => {
-      deleteButton.addEventListener("click", () => {
-        deleteTodo(index);
-      });
-    });
-}
-
-document.querySelector(".js-add-button").addEventListener("click", () => {
-  addTodo();
+addButton.addEventListener("click", () => {
+  addTask();
 });
 
-function addTodo() {
-  const inputElement = document.querySelector(".js-name-input");
-  const name = inputElement.value;
-
-  if (name.length !== 0) {
-    todoList.push(name);
-
-    inputElement.value = "";
-    renderTodoList();
-
-    localStorage.setItem("todoList", JSON.stringify(todoList));
-  } else {
-    alert("Task name can't be empty!");
+listContainer.addEventListener("click", (event) => {
+  if (event.target.tagName === "LI") {
+    event.target.classList.toggle("checked");
+    save();
+  } else if (event.target.tagName === "SPAN") {
+    event.target.parentElement.remove();
+    save();
   }
-}
-
-function deleteTodo(i) {
-  todoList.splice(i, 1);
-  renderTodoList();
-
-  if (todoList.length == 0) {
-    localStorage.removeItem("todoList");
-  } else {
-    localStorage.setItem("todoList", JSON.stringify(todoList));
-  }
-}
-
-document.querySelector(".js-clear-button").addEventListener("click", () => {
-  clearTodo();
 });
 
-function clearTodo() {
-  todoList = [];
-  renderTodoList();
-  localStorage.removeItem("todoList");
+renderList();
+
+function addTask() {
+  if (inputField.value === "") {
+    alert("Input field empty!");
+  } else {
+    let li = document.createElement("li");
+    li.innerHTML = inputField.value;
+    listContainer.appendChild(li);
+    let closeButton = document.createElement("span");
+    li.appendChild(closeButton);
+  }
+
+  inputField.value = "";
+  save();
+}
+
+function save() {
+  if (listContainer.innerHTML === "") {
+    localStorage.removeItem("taskList");
+  } else {
+    localStorage.setItem("taskList", listContainer.innerHTML);
+  }
+}
+
+function renderList() {
+  listContainer.innerHTML = localStorage.getItem("taskList");
 }
