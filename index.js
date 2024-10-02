@@ -2,6 +2,8 @@ const inputField = document.querySelector(".input-field");
 const listContainer = document.querySelector(".list-container");
 const addButton = document.querySelector(".add-button");
 
+renderList();
+
 addButton.addEventListener("click", () => {
   addTask();
 });
@@ -16,17 +18,15 @@ listContainer.addEventListener("click", (event) => {
   }
 });
 
-renderList();
-
 function addTask() {
   if (inputField.value === "") {
     alert("Input field empty!");
   } else {
     let li = document.createElement("li");
     li.innerHTML = inputField.value;
-    listContainer.appendChild(li);
     let closeButton = document.createElement("span");
     li.appendChild(closeButton);
+    listContainer.appendChild(li);
   }
 
   inputField.value = "";
