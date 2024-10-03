@@ -57,6 +57,7 @@
   border: none;
   outline: none;
   font-size: 1rem;
+  cursor: pointer;
   padding-left: clamp(1.5rem, 1.6vw + 1rem, 2rem);
   padding-right: clamp(1.5rem, 1.6vw + 1rem, 2rem);
   border-radius: 1.15rem;
@@ -90,6 +91,7 @@ ul li::before {
   background-size: cover;
   left: 0;
   top: 0.4rem;
+  cursor: pointer;
 }
 
 ul li.checked {
@@ -110,6 +112,7 @@ ul li span {
   background-size: cover;
   top: 0.1rem;
   right: 0;
+  cursor: pointer;
   transition: background-color 0.15s;
 }
 
