@@ -17,20 +17,67 @@
   align-items: flex-start;
 }
 
+@media (max-width: 700px) {
+  .app-name {
+    color: white;
+  }
+
+  .input-section {
+    background-color: white;
+  }
+
+  ul li {
+    color: white;
+  }
+
+  ul li::before {
+    background-image: url(./images/unchecked-white.svg);
+  }
+
+  ul li span {
+    background-image: url(./images/close-white.svg);
+  }
+}
+
+@media (min-width: 701px) {
+  .todo-app {
+    background-color: whitesmoke;
+  }
+
+  .app-name {
+    color: black;
+  }
+
+  .input-section {
+    background-color: rgb(224, 224, 224);
+  }
+
+  ul li {
+    color: black;
+  }
+
+  ul li::before {
+    background-image: url(./images/unchecked-black.svg);
+  }
+
+  ul li span {
+    background-image: url(./images/close-black.svg);
+  }
+}
+
 .todo-app {
   width: clamp(20rem, 35.2vw + 9rem, 31rem);
   padding: 2rem 1rem;
+  border-radius: 1rem;
 }
 
 .app-name {
   font-family: "Sofadi One";
   margin-bottom: 1rem;
-  color: white;
   font-size: 2rem;
 }
 
 .input-section {
-  background-color: white;
   width: 100%;
   height: 2.3rem;
   border-radius: 1.15rem;
@@ -75,7 +122,6 @@
 ul li {
   list-style: none;
   font-size: 1rem;
-  color: white;
   padding: 0.6rem 3rem 0.6rem 2rem;
   word-wrap: break-word;
   user-select: none;
@@ -87,7 +133,6 @@ ul li::before {
   position: absolute;
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url(./images/unchecked.svg);
   background-size: cover;
   left: 0;
   top: 0.4rem;
@@ -108,7 +153,6 @@ ul li span {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-image: url(./images/close.svg);
   background-size: cover;
   top: 0.1rem;
   right: 0;
