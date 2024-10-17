@@ -37,10 +37,6 @@
   ul li span {
     background-image: url(./images/close-white.svg);
   }
-
-  ul li p {
-    color: rgb(214, 214, 214);
-  }
 }
 
 @media (min-width: 701px) {
@@ -66,10 +62,6 @@
 
   ul li span {
     background-image: url(./images/close-black.svg);
-  }
-
-  ul li p {
-    color: black;
   }
 }
 
@@ -156,10 +148,6 @@ ul li.checked::before {
   background-image: url(./images/checked-green.svg);
 }
 
-.due-date:hover {
-  color: black;
-}
-
 ul li span {
   position: absolute;
   width: 2rem;
@@ -178,6 +166,11 @@ ul li span:hover {
 
 ul li p {
   font-size: 14px;
+  color: #00a500;
+}
+
+ul li p:hover {
+  color: #007a00;
 }
 
 .modal {
