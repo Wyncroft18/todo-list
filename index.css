@@ -37,6 +37,10 @@
   ul li span {
     background-image: url(./images/close-white.svg);
   }
+
+  ul li p {
+    color: rgb(214, 214, 214);
+  }
 }
 
 @media (min-width: 701px) {
@@ -62,6 +66,10 @@
 
   ul li span {
     background-image: url(./images/close-black.svg);
+  }
+
+  ul li p {
+    color: black;
   }
 }
 
@@ -148,10 +156,6 @@ ul li.checked::before {
   background-image: url(./images/checked-green.svg);
 }
 
-.due-date {
-  color: rgba(0, 0, 0, 0.616);
-}
-
 .due-date:hover {
   color: black;
 }
@@ -174,7 +178,6 @@ ul li span:hover {
 
 ul li p {
   font-size: 14px;
-  color: rgb(177, 177, 177);
 }
 
 .modal {
