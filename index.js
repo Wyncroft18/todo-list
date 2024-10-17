@@ -43,17 +43,25 @@ openModal();
 modalSubmitButton.addEventListener("click", () => {
   let dateInput = document.querySelector(".date-input");
   let timeInput = document.querySelector(".time-input");
+  let hour = Number(timeInput.value.slice(0, 2));
+  let minute = timeInput.value.slice(2, 5);
+  let time;
+
+  if (hour > 12) {
+    hour -= 12;
+    time = `${String(hour)}${minute} pm`;
+  } else {
+    time = `${String(hour)}${minute} am`;
+  }
 
   if (dateInput.value === "" && timeInput.value === "") {
     alert("Both input boxes shouldn't be empty.");
   } else if (dateInput.value === "") {
-    dueDates[currentIndex].innerHTML = `${timeInput.value}`;
+    dueDates[currentIndex].innerHTML = `${time}`;
   } else if (timeInput.value === "") {
     dueDates[currentIndex].innerHTML = `${dateInput.value}`;
   } else {
-    dueDates[
-      currentIndex
-    ].innerHTML = `${dateInput.value} | ${timeInput.value}`;
+    dueDates[currentIndex].innerHTML = `${dateInput.value} | ${time}`;
   }
 
   dateInput.value = "";
