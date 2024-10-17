@@ -233,3 +233,17 @@ ul li p:hover {
 .modal-submit-btn:hover {
   opacity: 0.8;
 }
+
+.modal-remove-btn {
+  border: none;
+  background-color: rgb(207, 0, 0);
+  color: white;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: opacity 0.15s;
+}
+
+.modal-remove-btn:hover {
+  opacity: 0.8;
+}

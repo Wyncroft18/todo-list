@@ -4,6 +4,7 @@ const addButton = document.querySelector(".add-button");
 
 // Modal Variables
 const modalSubmitButton = document.querySelector(".modal-submit-btn");
+const modalRemoveButton = document.querySelector(".modal-remove-btn");
 
 // Get modal
 const modal = document.querySelector(".modal");
@@ -67,6 +68,14 @@ modalSubmitButton.addEventListener("click", () => {
   dateInput.value = "";
   timeInput.value = "";
   save();
+  modal.style.display = "none";
+});
+
+// Add event listener to remove due date button
+modalRemoveButton.addEventListener("click", () => {
+  document.querySelector(".date-input").value = "";
+  document.querySelector(".time-input").value = "";
+  dueDates[currentIndex].innerHTML = "&plus; due date";
   modal.style.display = "none";
 });
 
